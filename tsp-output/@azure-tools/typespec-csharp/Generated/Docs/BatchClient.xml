@@ -1,0 +1,161 @@
+<?xml version="1.0" encoding="utf-8"?>
+<doc>
+  <members>
+    <member name="GetApplicationAsync(string,CancellationToken)">
+      <example>
+This sample shows how to call GetApplicationAsync.
+<code><![CDATA[
+BatchClient client = new BatchClient();
+
+Response<BatchApplication> response = await client.GetApplicationAsync("<applicationId>");
+]]></code>
+This sample shows how to call GetApplicationAsync with all parameters.
+<code><![CDATA[
+BatchClient client = new BatchClient();
+
+Response<BatchApplication> response = await client.GetApplicationAsync("<applicationId>");
+]]></code></example>
+    </member>
+    <member name="GetApplication(string,CancellationToken)">
+      <example>
+This sample shows how to call GetApplication.
+<code><![CDATA[
+BatchClient client = new BatchClient();
+
+Response<BatchApplication> response = client.GetApplication("<applicationId>");
+]]></code>
+This sample shows how to call GetApplication with all parameters.
+<code><![CDATA[
+BatchClient client = new BatchClient();
+
+Response<BatchApplication> response = client.GetApplication("<applicationId>");
+]]></code></example>
+    </member>
+    <member name="GetApplicationAsync(string,RequestContext)">
+      <example>
+This sample shows how to call GetApplicationAsync and parse the result.
+<code><![CDATA[
+BatchClient client = new BatchClient();
+
+Response response = await client.GetApplicationAsync("<applicationId>", null);
+
+JsonElement result = JsonDocument.Parse(response.ContentStream).RootElement;
+Console.WriteLine(result.GetProperty("id").ToString());
+Console.WriteLine(result.GetProperty("displayName").ToString());
+Console.WriteLine(result.GetProperty("versions")[0].ToString());
+]]></code>
+This sample shows how to call GetApplicationAsync with all parameters and parse the result.
+<code><![CDATA[
+BatchClient client = new BatchClient();
+
+Response response = await client.GetApplicationAsync("<applicationId>", null);
+
+JsonElement result = JsonDocument.Parse(response.ContentStream).RootElement;
+Console.WriteLine(result.GetProperty("id").ToString());
+Console.WriteLine(result.GetProperty("displayName").ToString());
+Console.WriteLine(result.GetProperty("versions")[0].ToString());
+]]></code></example>
+    </member>
+    <member name="GetApplication(string,RequestContext)">
+      <example>
+This sample shows how to call GetApplication and parse the result.
+<code><![CDATA[
+BatchClient client = new BatchClient();
+
+Response response = client.GetApplication("<applicationId>", null);
+
+JsonElement result = JsonDocument.Parse(response.ContentStream).RootElement;
+Console.WriteLine(result.GetProperty("id").ToString());
+Console.WriteLine(result.GetProperty("displayName").ToString());
+Console.WriteLine(result.GetProperty("versions")[0].ToString());
+]]></code>
+This sample shows how to call GetApplication with all parameters and parse the result.
+<code><![CDATA[
+BatchClient client = new BatchClient();
+
+Response response = client.GetApplication("<applicationId>", null);
+
+JsonElement result = JsonDocument.Parse(response.ContentStream).RootElement;
+Console.WriteLine(result.GetProperty("id").ToString());
+Console.WriteLine(result.GetProperty("displayName").ToString());
+Console.WriteLine(result.GetProperty("versions")[0].ToString());
+]]></code></example>
+    </member>
+    <member name="GetPoolAsync(string,CancellationToken)">
+      <example>
+This sample shows how to call GetPoolAsync.
+<code><![CDATA[
+BatchClient client = new BatchClient();
+
+Response<BatchPool> response = await client.GetPoolAsync("<poolId>");
+]]></code>
+This sample shows how to call GetPoolAsync with all parameters.
+<code><![CDATA[
+BatchClient client = new BatchClient();
+
+Response<BatchPool> response = await client.GetPoolAsync("<poolId>");
+]]></code></example>
+    </member>
+    <member name="GetPool(string,CancellationToken)">
+      <example>
+This sample shows how to call GetPool.
+<code><![CDATA[
+BatchClient client = new BatchClient();
+
+Response<BatchPool> response = client.GetPool("<poolId>");
+]]></code>
+This sample shows how to call GetPool with all parameters.
+<code><![CDATA[
+BatchClient client = new BatchClient();
+
+Response<BatchPool> response = client.GetPool("<poolId>");
+]]></code></example>
+    </member>
+    <member name="GetPoolAsync(string,RequestContext)">
+      <example>
+This sample shows how to call GetPoolAsync and parse the result.
+<code><![CDATA[
+BatchClient client = new BatchClient();
+
+Response response = await client.GetPoolAsync("<poolId>", null);
+
+JsonElement result = JsonDocument.Parse(response.ContentStream).RootElement;
+Console.WriteLine(result.ToString());
+]]></code>
+This sample shows how to call GetPoolAsync with all parameters and parse the result.
+<code><![CDATA[
+BatchClient client = new BatchClient();
+
+Response response = await client.GetPoolAsync("<poolId>", null);
+
+JsonElement result = JsonDocument.Parse(response.ContentStream).RootElement;
+Console.WriteLine(result.GetProperty("id").ToString());
+Console.WriteLine(result.GetProperty("displayName").ToString());
+Console.WriteLine(result.GetProperty("url").ToString());
+]]></code></example>
+    </member>
+    <member name="GetPool(string,RequestContext)">
+      <example>
+This sample shows how to call GetPool and parse the result.
+<code><![CDATA[
+BatchClient client = new BatchClient();
+
+Response response = client.GetPool("<poolId>", null);
+
+JsonElement result = JsonDocument.Parse(response.ContentStream).RootElement;
+Console.WriteLine(result.ToString());
+]]></code>
+This sample shows how to call GetPool with all parameters and parse the result.
+<code><![CDATA[
+BatchClient client = new BatchClient();
+
+Response response = client.GetPool("<poolId>", null);
+
+JsonElement result = JsonDocument.Parse(response.ContentStream).RootElement;
+Console.WriteLine(result.GetProperty("id").ToString());
+Console.WriteLine(result.GetProperty("displayName").ToString());
+Console.WriteLine(result.GetProperty("url").ToString());
+]]></code></example>
+    </member>
+  </members>
+</doc>

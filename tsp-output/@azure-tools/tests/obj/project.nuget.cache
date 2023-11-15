@@ -1,0 +1,14 @@
+{
+  "version": 2,
+  "dgSpecHash": "QQ+WsFkZzSct/sLHKoVbm5NT24L6uz6UcxRutUTh3Dst79ajzzrsNm0dmKRrU2RcAvYiei6wTCynv1P63bGKTg==",
+  "success": false,
+  "projectFilePath": "C:\\dev\\git\\BatchListIssue\\tsp-output\\@azure-tools\\tests\\Azure.Compute.Batch.Tests.csproj",
+  "expectedPackageFiles": [],
+  "logs": [
+    {
+      "code": "NU1105",
+      "level": "Error",
+      "message": "Unable to read project information for 'Azure.Compute.Batch.Tests': Invalid framework identifier ''."
+    }
+  ]
+}

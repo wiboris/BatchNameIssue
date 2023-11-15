@@ -1,0 +1,521 @@
+language:
+  default:
+    name: Batch
+    description: Azure Batch provides Cloud-scale job scheduling and compute management.
+    namespace: Azure.Batch
+  java:
+    namespace: com.azure.batch
+protocol: {}
+info:
+  title: Batch
+  description: Azure Batch provides Cloud-scale job scheduling and compute management.
+schemas:
+  strings:
+    - &ref_0
+      language:
+        default:
+          name: string
+          description: simple string
+      protocol: {}
+      type: string
+    - &ref_1
+      language:
+        default:
+          name: applicationId
+          description: A sequence of textual characters.
+      protocol: {}
+      type: string
+  constants:
+    - &ref_6
+      language:
+        default:
+          name: api-version
+          description: API Version
+      protocol: {}
+      type: constant
+      valueType: *ref_0
+      value:
+        value: ''
+    - &ref_7
+      language:
+        default:
+          name: accept
+          description: 'Accept: application/json'
+      protocol: {}
+      type: constant
+      valueType: *ref_0
+      value:
+        value: application/json
+  objects:
+    - &ref_9
+      language:
+        default:
+          name: BatchApplication
+          description: Contains information about an application in an Azure Batch Account.
+          namespace: Azure.Batch
+        java:
+          namespace: com.azure.batch
+      protocol: {}
+      type: object
+      properties:
+        - language:
+            default:
+              name: id
+              description: >-
+                A string that uniquely identifies the application within the
+                Account.
+          protocol: {}
+          schema: *ref_1
+          serializedName: id
+          required: true
+          nullable: false
+          readOnly: false
+        - language:
+            default:
+              name: displayName
+              description: The display name for the application.
+          protocol: {}
+          schema: *ref_1
+          serializedName: displayName
+          required: true
+          nullable: false
+          readOnly: false
+        - language:
+            default:
+              name: versions
+              description: The list of available versions of the application.
+          protocol: {}
+          schema: &ref_4
+            language:
+              default:
+                name: versions
+                description: ''
+            protocol: {}
+            type: array
+            elementType: *ref_1
+          serializedName: versions
+          required: true
+          nullable: false
+          readOnly: false
+      usage:
+        - output
+        - public
+    - &ref_10
+      language:
+        default:
+          name: BatchError
+          description: An error response received from the Azure Batch service.
+          namespace: Azure.Batch
+        java:
+          namespace: com.azure.batch
+      protocol: {}
+      type: object
+      properties:
+        - language:
+            default:
+              name: code
+              description: >-
+                An identifier for the error. Codes are invariant and are
+                intended to be consumed programmatically.
+          protocol: {}
+          schema: *ref_1
+          serializedName: code
+          required: true
+          nullable: false
+          readOnly: false
+        - language:
+            default:
+              name: message
+              description: >-
+                A message describing the error, intended to be suitable for
+                display in a user interface.
+          protocol: {}
+          schema: &ref_2
+            language:
+              default:
+                name: ErrorMessage
+                description: An error message received in an Azure Batch error response.
+                namespace: Azure.Batch
+              java:
+                namespace: com.azure.batch
+            protocol: {}
+            type: object
+            properties:
+              - language:
+                  default:
+                    name: lang
+                    description: The language code of the error message.
+                protocol: {}
+                schema: *ref_1
+                serializedName: lang
+                required: false
+                nullable: false
+                readOnly: false
+              - language:
+                  default:
+                    name: value
+                    description: The text of the message.
+                protocol: {}
+                schema: *ref_1
+                serializedName: value
+                required: false
+                nullable: false
+                readOnly: false
+            usage:
+              - exception
+          serializedName: message
+          required: false
+          nullable: false
+          readOnly: false
+        - language:
+            default:
+              name: values
+              description: >-
+                A collection of key-value pairs containing additional details
+                about the error.
+          protocol: {}
+          schema: &ref_5
+            language:
+              default:
+                name: values
+                description: ''
+            protocol: {}
+            type: array
+            elementType: &ref_3
+              language:
+                default:
+                  name: BatchErrorDetail
+                  description: >-
+                    An item of additional information included in an Azure Batch
+                    error response.
+                  namespace: Azure.Batch
+                java:
+                  namespace: com.azure.batch
+              protocol: {}
+              type: object
+              properties:
+                - language:
+                    default:
+                      name: key
+                      description: >-
+                        An identifier specifying the meaning of the Value
+                        property.
+                  protocol: {}
+                  schema: *ref_1
+                  serializedName: key
+                  required: false
+                  nullable: false
+                  readOnly: false
+                - language:
+                    default:
+                      name: value
+                      description: >-
+                        The additional information included with the error
+                        response.
+                  protocol: {}
+                  schema: *ref_1
+                  serializedName: value
+                  required: false
+                  nullable: false
+                  readOnly: false
+              usage:
+                - exception
+          serializedName: values
+          required: false
+          nullable: false
+          readOnly: false
+      usage:
+        - exception
+    - *ref_2
+    - *ref_3
+    - &ref_14
+      language:
+        default:
+          name: BatchPool
+          description: A Pool in the Azure Batch service.
+          namespace: Azure.Batch
+        java:
+          namespace: com.azure.batch
+      protocol: {}
+      type: object
+      properties:
+        - language:
+            default:
+              name: id
+              description: >-
+                A string that uniquely identifies the Pool within the Account.
+                The ID can contain any combination of alphanumeric characters
+                including hyphens and underscores, and cannot contain more than
+                64 characters. The ID is case-preserving and case-insensitive
+                (that is, you may not have two IDs within an Account that differ
+                only by case).
+          protocol: {}
+          schema: *ref_1
+          serializedName: id
+          required: false
+          nullable: false
+          readOnly: true
+        - language:
+            default:
+              name: displayName
+              description: >-
+                The display name for the Pool. The display name need not be
+                unique and can contain any Unicode characters up to a maximum
+                length of 1024.
+          protocol: {}
+          schema: *ref_1
+          serializedName: displayName
+          required: false
+          nullable: false
+          readOnly: true
+        - language:
+            default:
+              name: url
+              description: The URL of the Pool.
+          protocol: {}
+          schema: *ref_1
+          serializedName: url
+          required: false
+          nullable: false
+          readOnly: true
+      usage:
+        - output
+        - public
+  arrays:
+    - *ref_4
+    - *ref_5
+operationGroups:
+  - language:
+      default:
+        name: ''
+        description: ''
+    protocol: {}
+    $key: ''
+    operations:
+      - &ref_15
+        language:
+          default:
+            name: get
+            description: Gets information about the specified Application.
+        protocol: {}
+        operationId: get
+        extensions: {}
+        internalApi: false
+        convenienceApi:
+          language:
+            default:
+              name: get
+              description: ''
+          protocol: {}
+        generateProtocolApi: true
+        requests:
+          - language:
+              default:
+                name: ''
+                description: ''
+            protocol:
+              http:
+                path: /applications/{applicationId}
+                method: get
+                uri: '{endpoint}'
+        parameters:
+          - &ref_11
+            language:
+              default:
+                name: endpoint
+                description: Server parameter
+                serializedName: endpoint
+            protocol:
+              http:
+                in: uri
+            schema: *ref_0
+            implementation: Client
+            origin: modelerfour:synthesized/host
+            required: true
+            extensions:
+              x-ms-skip-url-encoding: true
+          - &ref_12
+            language:
+              default:
+                name: api-version
+                description: Version parameter
+                serializedName: api-version
+            protocol:
+              http:
+                in: query
+            schema: *ref_6
+            implementation: Client
+            origin: modelerfour:synthesized/api-version
+            required: true
+          - &ref_8
+            language:
+              default:
+                name: applicationId
+                description: The ID of the Application
+                serializedName: applicationId
+            protocol:
+              http:
+                in: path
+            schema: *ref_1
+            implementation: Method
+            required: true
+            nullable: false
+          - language:
+              default:
+                name: accept
+                description: Accept header
+                serializedName: accept
+            protocol:
+              http:
+                in: header
+            schema: *ref_7
+            implementation: Method
+            origin: modelerfour:synthesized/accept
+            required: true
+        signatureParameters:
+          - *ref_8
+        responses:
+          - language:
+              default:
+                name: getResponse
+                description: The request has succeeded.
+            protocol:
+              http:
+                statusCodes:
+                  - '200'
+                headers: []
+                mediaTypes:
+                  - application/json
+            schema: *ref_9
+        exceptions:
+          - language:
+              default:
+                name: getResponse
+                description: An unexpected error response
+            protocol:
+              http:
+                statusCodes:
+                  - default
+                headers: []
+                mediaTypes:
+                  - application/json
+            schema: *ref_10
+      - &ref_16
+        language:
+          default:
+            name: get
+            description: Gets information about the specified Pool.
+        protocol: {}
+        operationId: get
+        extensions: {}
+        internalApi: false
+        convenienceApi:
+          language:
+            default:
+              name: get
+              description: ''
+          protocol: {}
+        generateProtocolApi: true
+        requests:
+          - language:
+              default:
+                name: ''
+                description: ''
+            protocol:
+              http:
+                path: /pools/{poolId}
+                method: get
+                uri: '{endpoint}'
+        parameters:
+          - *ref_11
+          - *ref_12
+          - &ref_13
+            language:
+              default:
+                name: poolId
+                description: The ID of the Pool to get.
+                serializedName: poolId
+            protocol:
+              http:
+                in: path
+            schema: *ref_1
+            implementation: Method
+            required: true
+            nullable: false
+          - language:
+              default:
+                name: accept
+                description: Accept header
+                serializedName: accept
+            protocol:
+              http:
+                in: header
+            schema: *ref_7
+            implementation: Method
+            origin: modelerfour:synthesized/accept
+            required: true
+        signatureParameters:
+          - *ref_13
+        responses:
+          - language:
+              default:
+                name: getResponse
+                description: The request has succeeded.
+            protocol:
+              http:
+                statusCodes:
+                  - '200'
+                headers: []
+                mediaTypes:
+                  - application/json
+            schema: *ref_14
+        exceptions:
+          - language:
+              default:
+                name: getResponse
+                description: An unexpected error response
+            protocol:
+              http:
+                statusCodes:
+                  - default
+                headers: []
+                mediaTypes:
+                  - application/json
+            schema: *ref_10
+security:
+  authenticationRequired: false
+  schemes: []
+clients:
+  - language:
+      default:
+        name: BatchClient
+        description: >-
+          Azure Batch provides Cloud-scale job scheduling and compute
+          management.
+    protocol: {}
+    security:
+      authenticationRequired: false
+      schemes: []
+    operationGroups:
+      - language:
+          default:
+            name: ''
+            description: ''
+        protocol: {}
+        $key: ''
+        operations:
+          - *ref_15
+          - *ref_16
+    apiVersions:
+      - version: 2023-05-01.17.0
+    globalParameters:
+      - *ref_11
+      - *ref_12
+    serviceVersion:
+      language:
+        default:
+          name: BatchServiceVersion
+          description: BatchClient
+      protocol: {}
+globalParameters:
+  - *ref_11
